@@ -20,7 +20,7 @@ const Navbar = () => {
               />
             </div>
             <div className="flex sm:hidden items-center">
-              <button className="h-full flex items-center text-[0.8rem] px-2 font-bold relative after:block after:h-[1px] after:w-full after:bg-primary after:absolute after:bottom-0 after:left-0 after:scale-x-0 after:scale-y-100 after:origin-[100%_100%] after:transition-[transform] after:duration-[600ms] after:ease-linear hover:after:scale-x-100 hover:after:scale-y-100 hover:after:origin-[0%_100%]">
+              <button className="h-full flex items-center text-[0.8rem] px-2 font-bold relative after:block after:h-[1px] after:w-full after:bg-secondary dark:after:bg-primary after:absolute after:bottom-0 after:left-0 after:scale-x-0 after:scale-y-100 after:origin-[100%_100%] after:transition-[transform] after:duration-[600ms] after:ease-linear hover:after:scale-x-100 hover:after:scale-y-100 hover:after:origin-[0%_100%]">
                 Info
               </button>
               <LinkBtn href="/account/login">Login</LinkBtn>

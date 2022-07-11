@@ -25,7 +25,7 @@ const LinkBtn = ({
   return (
     <Link href={href}>
       <a
-        className={`${height} flex items-center ${paddingTopBottom} ${paddingLeftRight} ${fontSize} ${fontWight} relative after:block after:h-[1px] after:w-full after:bg-primary after:absolute after:bottom-0 after:left-0 after:scale-x-0 after:scale-y-100 after:origin-[100%_100%] after:transition-[transform] after:duration-[${effectSlideTime}] after:ease-linear hover:after:scale-x-100 hover:after:scale-y-100 hover:after:origin-[0%_100%]`}
+        className={`${height} flex items-center ${paddingTopBottom} ${paddingLeftRight} ${fontSize} ${fontWight} relative after:block after:h-[1px] after:w-full after:bg-secondary dark:after:bg-primary after:absolute after:bottom-0 after:left-0 after:scale-x-0 after:scale-y-100 after:origin-[100%_100%] after:transition-[transform] after:duration-[${effectSlideTime}] after:ease-linear hover:after:scale-x-100 hover:after:scale-y-100 hover:after:origin-[0%_100%]`}
       >
         {children}
       </a>
