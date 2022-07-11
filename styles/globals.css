@@ -2,12 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --color-secondary: 0deg, 0%, 5%;
+    --color-primary: 0deg, 0%, 96%;
+  }
+}
+
 body {
+  background-color: hsl(0deg, 0%, 96%);
+  color: hsl(0deg, 0%, 5%);
   padding: 0;
   margin: 0;
   font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Arial, Helvetica,
     sans-serif;
   letter-spacing: 0em;
+}
+
+.body-dark {
+  background-color: hsl(0deg, 0%, 5%);
+  color: hsl(0deg, 0%, 96%);
 }
 
 * {
