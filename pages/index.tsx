@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useCallback, useEffect, useState } from 'react';
 import Navbar from '../components/navbar';
+import SlideShow from '../components/slideshow';
 
 const Home: NextPage = () => {
   const [mounted, setMounted] = useState(false);
@@ -45,6 +46,7 @@ const Home: NextPage = () => {
         </Head>
 
         <Navbar />
+        <SlideShow />
         <button onClick={handleTheme}>Change Theme</button>
       </div>
     );
