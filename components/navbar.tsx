@@ -11,6 +11,7 @@ import {
   faBars
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import NavbarMenu from './navbar-menu';
 
 const Navbar = () => {
   const [isMenHovered, setIsMenHovered] = useState<boolean>(false);
@@ -18,6 +19,7 @@ const Navbar = () => {
   const { rect: rectMen, ref: refMen } = useClientRect([isMenHovered]);
   const { rect: rectWomen, ref: refWomen } = useClientRect([isWomenHovered]);
 
+  console.log(rectMen?.height);
   const { scrollY } = useContext(ScrollContext);
 
   return (
@@ -84,9 +86,26 @@ const Navbar = () => {
                   </p>
                 </LinkBtn>
                 <div
-                  className="absolute top-[3rem] left-0 h-12 w-full hidden group-hover:block"
+                  className="absolute top-[3rem] left-0 w-full h-0 invisible opacity-0 translate-y-[3rem] transition-all duration-300 delay-[0ms] group-hover:translate-y-0 group-hover:h-fit group-hover:visible group-hover:opacity-100 group-hover:delay-150"
                   ref={refMen}
-                ></div>
+                >
+                  <NavbarMenu
+                    title_1="Tops"
+                    title_2="Bottoms"
+                    links_1={[
+                      'Stringers',
+                      'Tank Tops',
+                      'Short Sleeves',
+                      'Jackets & Hoodies'
+                    ]}
+                    links_2={[
+                      'Shorts',
+                      'Joggers',
+                      'Boardshorts',
+                      'Base layers'
+                    ]}
+                  />
+                </div>
               </div>
               <div
                 className="group"
@@ -99,9 +118,26 @@ const Navbar = () => {
                   </p>
                 </LinkBtn>
                 <div
+                  className="absolute top-[3rem] left-0 w-full h-0 invisible opacity-0 translate-y-[3rem] transition-all duration-300 delay-[0ms] group-hover:translate-y-0 group-hover:h-fit group-hover:visible group-hover:opacity-100 group-hover:delay-150"
                   ref={refWomen}
-                  className="absolute top-[3rem] left-0 h-36 w-full hidden group-hover:block"
-                ></div>
+                >
+                  <NavbarMenu
+                    title_1="Tops"
+                    title_2="Bottoms"
+                    links_1={[
+                      'Stringers',
+                      'Tank Tops',
+                      'Short Sleeves',
+                      'Jackets & Hoodies'
+                    ]}
+                    links_2={[
+                      'Shorts',
+                      'Joggers',
+                      'Boardshorts',
+                      'Base layers'
+                    ]}
+                  />
+                </div>
               </div>
             </div>
             <div className="flex gap-1">
