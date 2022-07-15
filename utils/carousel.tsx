@@ -6,7 +6,6 @@ import ClassNames from 'embla-carousel-class-names';
 import Autoplay from 'embla-carousel-autoplay';
 import React, { ReactNode, useCallback, useEffect, useState } from 'react';
 import styles from '../styles/carousel.module.css';
-import { isRegExp } from 'util/types';
 
 interface ContextValue {
   embla: EmblaCarouselType | undefined;
@@ -30,7 +29,7 @@ const Carousel = ({ children, className }: Props) => {
     {
       loop: true
     },
-    [ClassNames()]
+    [ClassNames(), Autoplay({ delay: 15000, stopOnInteraction: false })]
   );
 
   const onSelect = useCallback(() => {

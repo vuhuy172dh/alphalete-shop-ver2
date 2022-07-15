@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { CarouselContext } from '../utils/carousel';
 import styles from '../styles/carousel.module.css';
 

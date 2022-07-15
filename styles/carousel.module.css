@@ -7,10 +7,6 @@
   cursor: grabbing;
 }
 
-.viewport {
-  overflow: hidden;
-}
-
 .container {
   transition: none !important;
   display: flex;
@@ -25,8 +21,6 @@
   left: 0 !important;
   right: 0 !important;
   opacity: 0;
-  border-radius: 1.5rem;
-  overflow: hidden;
   transition: opacity 0.5s;
   border-radius: 3rem;
 }

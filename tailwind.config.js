@@ -29,6 +29,7 @@ module.exports = {
         primary_80: 'hsla(var(--color-primary), 0.8)',
         primary_90: 'hsla(var(--color-primary), 0.9)',
         secondary: 'hsl(var(--color-secondary), 1)',
+        secondary_10: 'hsla(var(--color-secondary), 0.1)',
         secondary_20: 'hsla(var(--color-secondary), 0.2)',
         secondary_30: 'hsla(var(--color-secondary), 0.3)',
         secondary_40: 'hsla(var(--color-secondary), 0.4)',
