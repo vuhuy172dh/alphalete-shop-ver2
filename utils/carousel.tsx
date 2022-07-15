@@ -41,10 +41,18 @@ const Carousel = ({ children, className }: Props) => {
     (event: EmblaEventType) => {
       if (!emblaApi) return;
       const isResizeEvent = event === 'resize';
-      setIsReady(!isResizeEvent);
-      if (isResizeEvent) emblaApi.reInit();
+      const toggleClass = isResizeEvent ? 'remove' : 'add';
+      document
+        .getElementById('viewport')
+        ?.classList[toggleClass](styles.is_ready);
+      if (isResizeEvent) {
+        emblaApi.reInit();
+      }
+
+      emblaApi.internalEngine().translate.toggleActive(false);
+      emblaApi.internalEngine().translate.clear();
     },
-    [emblaApi]
+    [emblaApi, setIsReady]
   );
 
   useEffect(() => {
@@ -57,17 +65,13 @@ const Carousel = ({ children, className }: Props) => {
 
     emblaApi.internalEngine().translate.toggleActive(false);
     emblaApi.internalEngine().translate.clear();
-  }, [emblaApi, onSelect, onInit, isReady]);
+  }, [emblaApi, onSelect, onInit, setIsReady, isReady]);
 
   //inactivate transform
 
   return (
     <CarouselContext.Provider value={{ embla: emblaApi, selectedIndex }}>
-      <div
-        ref={viewportRef}
-        className={`${styles.viewport} ${isReady ? styles.is_ready : ''} 
-          } ${className}`}
-      >
+      <div id="viewport" ref={viewportRef} className={`${styles.viewport}`}>
         <div className={styles.container}>{children}</div>
       </div>
     </CarouselContext.Provider>
