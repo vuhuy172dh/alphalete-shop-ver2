@@ -5,6 +5,12 @@ import { ScrollContext } from '../utils/scroll-observer';
 import ButtonSlideEffect from './button-slide-effect';
 import InforCarousel from './info-carousel';
 import LinkBtn from './link-btn';
+import {
+  faSearch,
+  faBriefcase,
+  faBars
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Navbar = () => {
   const [isMenHovered, setIsMenHovered] = useState<boolean>(false);
@@ -98,9 +104,25 @@ const Navbar = () => {
                 ></div>
               </div>
             </div>
-            <div className="flex">
-              <button>search</button>
-              <button>card</button>
+            <div className="flex gap-1">
+              <button className="w-[40px] h-[40px] rounded-full hover:bg-secondary_30 dark:hover:bg-primary_30 transition-all">
+                <FontAwesomeIcon
+                  icon={faSearch}
+                  className="text-inherit text-[1rem]"
+                />
+              </button>
+              <button className="w-[40px] h-[40px] rounded-full hover:bg-secondary_30 dark:hover:bg-primary_30 transition-all">
+                <FontAwesomeIcon
+                  icon={faBriefcase}
+                  className="text-inherit text-[1rem]"
+                />
+              </button>
+              <button className="sm:block md:block hidden w-[40px] h-[40px] rounded-full hover:bg-secondary_30 dark:hover:bg-primary_30 transition-all">
+                <FontAwesomeIcon
+                  icon={faBars}
+                  className="text-inherit text-[1rem]"
+                />
+              </button>
             </div>
           </div>
           <div
