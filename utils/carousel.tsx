@@ -42,6 +42,9 @@ const Carousel = ({ children, className }: Props) => {
       if (!emblaApi) return;
       const isResizeEvent = event === 'resize';
       const toggleClass = isResizeEvent ? 'remove' : 'add';
+      if (toggleClass === 'remove') {
+        emblaApi.scrollTo(0);
+      }
       document
         .getElementById('viewport')
         ?.classList[toggleClass](styles.is_ready);
