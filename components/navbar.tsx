@@ -30,7 +30,7 @@ const Navbar = () => {
           <div id="nav-top" className="h-8 w-full flex px-6">
             <div className="block w-full mr-auto">
               <InforCarousel
-                options={{ loop: true }}
+                options={{ loop: true, align: 'center' }}
                 autoplay={{ delay: 5000, stopOnInteraction: false }}
                 slides={[
                   'Free Domestic Shipping Over $150 and 30 Day Returns',
