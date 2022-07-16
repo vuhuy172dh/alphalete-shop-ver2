@@ -90,6 +90,10 @@ const Navbar = () => {
                   ref={refMen}
                 >
                   <NavbarMenu
+                    posters_default={[
+                      'https://cdn.shopify.com/s/files/1/0667/0133/files/Elements_85.jpg?crop=center&height=300&v=1648056105&width=250',
+                      'https://cdn.shopify.com/s/files/1/0667/0133/files/Elements_08.jpg?crop=center&height=300&v=1651867703&width=250'
+                    ]}
                     title_1="Tops"
                     title_2="Bottoms"
                     links_1={[
@@ -103,6 +107,16 @@ const Navbar = () => {
                       'Joggers',
                       'Boardshorts',
                       'Base layers'
+                    ]}
+                    posters_1={[
+                      'https://cdn.shopify.com/s/files/1/0667/0133/collections/m_stringer_tank.jpg?crop=center&v=1655151099&width=520',
+                      'https://cdn.shopify.com/s/files/1/0667/0133/collections/m_tank.jpg?crop=center&amp;v=1655150864&amp;width=520',
+                      'https://cdn.shopify.com/s/files/1/0667/0133/collections/m_sweater.jpg?crop=center&amp;v=1655151017&amp;width=520',
+                      'https://cdn.shopify.com/s/files/1/0667/0133/collections/m_hoodies.jpg?crop=center&amp;v=1655150884&amp;width=520'
+                    ]}
+                    posters_2={[
+                      'https://cdn.shopify.com/s/files/1/0667/0133/collections/m_short_3.jpg?crop=center&amp;v=1655150936&amp;width=520',
+                      'https://cdn.shopify.com/s/files/1/0667/0133/collections/m_jogger.jpg?crop=center&amp;v=1655153410&amp;width=520'
                     ]}
                   />
                 </div>
@@ -122,19 +136,38 @@ const Navbar = () => {
                   ref={refWomen}
                 >
                   <NavbarMenu
+                    posters_default={[
+                      'https://cdn.shopify.com/s/files/1/0667/0133/files/AmplifyJune_13.jpg?crop=center&height=300&v=1654936386&width=250',
+                      'https://cdn.shopify.com/s/files/1/0667/0133/files/Amplify_06.jpg?crop=center&height=300&v=1653147420&width=250'
+                    ]}
                     title_1="Tops"
                     title_2="Bottoms"
                     links_1={[
-                      'Stringers',
+                      'Sports Bras',
                       'Tank Tops',
-                      'Short Sleeves',
+                      'Shirts & Crops',
+                      'Long Sleeves',
                       'Jackets & Hoodies'
+                    ]}
+                    posters_1={[
+                      'https://cdn.shopify.com/s/files/1/0667/0133/collections/w_bra_2.jpg?crop=center&v=1655150635&width=520',
+                      'https://cdn.shopify.com/s/files/1/0667/0133/collections/w_tank.jpg?crop=center&v=1655150475&width=520',
+                      'https://cdn.shopify.com/s/files/1/0667/0133/collections/w_short_sleeve.jpg?crop=center&v=1655152437&width=520',
+                      'https://cdn.shopify.com/s/files/1/0667/0133/collections/w_long_sleeve_2.jpg?crop=center&v=1655150459&width=520',
+                      'https://cdn.shopify.com/s/files/1/0667/0133/collections/w_hoodies.jpg?crop=center&v=1655150441&width=520'
                     ]}
                     links_2={[
                       'Shorts',
+                      'Leggings',
                       'Joggers',
-                      'Boardshorts',
-                      'Base layers'
+                      'Dresses & Skirts',
+                      'Underwear'
+                    ]}
+                    posters_2={[
+                      'https://cdn.shopify.com/s/files/1/0667/0133/collections/w_Shorts.jpg?crop=center&v=1655150037&width=520',
+                      'https://cdn.shopify.com/s/files/1/0667/0133/collections/women_seamles.jpg?crop=center&v=1655152221&width=520',
+                      'https://cdn.shopify.com/s/files/1/0667/0133/collections/w_jogger.jpg?crop=center&v=1655152897&width=520',
+                      'https://cdn.shopify.com/s/files/1/0667/0133/collections/w_dress.jpg?crop=center&v=1655150420&width=520'
                     ]}
                   />
                 </div>

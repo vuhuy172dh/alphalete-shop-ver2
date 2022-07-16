@@ -28,8 +28,8 @@ const Footer = () => {
           <div className="flex flex-col mr-8 w-full">
             <h4 className="font-bold text-[1.1rem] mb-4">SUPPORT</h4>
             <ul className="flex flex-col items-start gap-4 pl-2">
-              {support_links.map((support) => (
-                <li className="w-fit">
+              {support_links.map((support, index) => (
+                <li className="w-fit" key={index}>
                   <LinkBtn href={`/supports`}>
                     <p className="font-normal text-[0.8rem] leading-none">
                       {support}
@@ -42,8 +42,8 @@ const Footer = () => {
           <div className="flex flex-col w-full">
             <h4 className="font-bold text-[1.1rem] mb-4">INFO</h4>
             <ul className="flex flex-col items-start gap-4 pl-2">
-              {info_links.map((info) => (
-                <li className="w-fit">
+              {info_links.map((info, index) => (
+                <li className="w-fit" key={index}>
                   <LinkBtn href="/info">
                     <p className="font-normal text-[0.8rem] leading-none">
                       {info}
