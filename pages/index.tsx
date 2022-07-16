@@ -1,9 +1,10 @@
 import type { NextPage } from 'next';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import Footer from '../components/footer';
 import Header from '../components/header';
 import Navbar from '../components/navbar';
 import SlideShow from '../components/slideshow';
-import handleDarkMode, { checkDarkMode } from '../utils/dark-mode';
+import DarkMode from '../utils/dark-mode';
 
 const Home: NextPage = () => {
   const [mounted, setMounted] = useState(false);
@@ -13,14 +14,15 @@ const Home: NextPage = () => {
 
   if (!mounted) return null;
   else {
-    checkDarkMode();
     return (
-      <div>
-        <Header title="Alphalete" />
-        <Navbar />
-        <SlideShow />
-        <button onClick={handleDarkMode}>Change Theme</button>
-      </div>
+      <DarkMode>
+        <div>
+          <Header title="Alphalete" />
+          <Navbar />
+          <SlideShow />
+          <Footer />
+        </div>
+      </DarkMode>
     );
   }
 };
