@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface DarkModeValue {
   mode: 'light' | 'dark';
@@ -22,14 +22,22 @@ const DarkMode = ({ children }: Props) => {
   };
 
   const handleDarkMode = (): void => {
-    if (document.documentElement.classList.contains('dark')) {
-      document.documentElement.classList.remove('dark');
-      document.body.classList.remove('body-dark');
-      return;
-    }
-    document.documentElement.classList.add('dark');
-    document.body.classList.add('body-dark');
+    if (mode === 'dark') setMode('light');
+    else setMode('dark');
   };
+
+  useEffect(() => {
+    const updateDarkMode = (): void => {
+      if (mode === 'light') {
+        document.documentElement.classList.remove('dark');
+        document.body.classList.remove('body-dark');
+        return;
+      }
+      document.documentElement.classList.add('dark');
+      document.body.classList.add('body-dark');
+    };
+    updateDarkMode();
+  }, [setMode, mode, handleDarkMode]);
 
   declareDarkMode();
   return (
