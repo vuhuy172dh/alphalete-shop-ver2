@@ -1,0 +1,38 @@
+.viewport:global(.is-draggable) {
+  cursor: move;
+  cursor: grab;
+}
+
+.viewport:global(.is-dragging) {
+  cursor: grabbing;
+}
+
+.viewport {
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  user-select: none;
+}
+
+.slide {
+  min-width: 20%;
+  margin: 0 1rem;
+}
+
+.prev_button {
+  display: flex;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 10%;
+}
+
+.next_button {
+  display: flex;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  right: 10%;
+}
