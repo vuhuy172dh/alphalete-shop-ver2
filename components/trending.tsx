@@ -5,7 +5,7 @@ import TrendingItem from './trending-item';
 const Trending = () => {
   return (
     <div className="w-full h-full flex flex-col">
-      <div className="w-full h-full px-24 flex items-center">
+      <div className="w-full h-full px-[7%] flex items-center">
         <div className="flex flex-col w-full h-full gap-2">
           <p className="leading-none">Amplify Heaven</p>
           <div className="block w-fit">
@@ -22,7 +22,7 @@ const Trending = () => {
           </button>
         </div>
       </div>
-      <div className="w-full h-full my-4 overflow-hidde relative">
+      <div className="w-full h-full my-4 overflow-hidden  relative">
         <TrendingCarousel>
           <TrendingItem index={0}>
             <img
@@ -42,7 +42,37 @@ const Trending = () => {
               alt="item"
             />
           </TrendingItem>
-          <TrendingItem index={3}>
+          <TrendingItem index={0}>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0667/0133/products/AmplifyRestockMay310133_400x.jpg?v=1654661505"
+              alt="item"
+            />
+          </TrendingItem>
+          <TrendingItem index={1}>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0667/0133/products/AmplifyRestockMay310133_400x.jpg?v=1654661505"
+              alt="item"
+            />
+          </TrendingItem>
+          <TrendingItem index={2}>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0667/0133/products/AmplifyRestockMay310133_400x.jpg?v=1654661505"
+              alt="item"
+            />
+          </TrendingItem>
+          <TrendingItem index={0}>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0667/0133/products/AmplifyRestockMay310133_400x.jpg?v=1654661505"
+              alt="item"
+            />
+          </TrendingItem>
+          <TrendingItem index={1}>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0667/0133/products/AmplifyRestockMay310133_400x.jpg?v=1654661505"
+              alt="item"
+            />
+          </TrendingItem>
+          <TrendingItem index={2}>
             <img
               src="https://cdn.shopify.com/s/files/1/0667/0133/products/AmplifyRestockMay310133_400x.jpg?v=1654661505"
               alt="item"

@@ -8,17 +8,25 @@
 }
 
 .viewport {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
 .container {
   display: flex;
   user-select: none;
+  width: 100%;
+  height: 100%;
 }
 
 .slide {
-  min-width: 20%;
+  flex: 0 0 20%;
   margin: 0 1rem;
+}
+
+.slide:first-child {
+  margin-left: 6rem;
 }
 
 .prev_button {
@@ -27,6 +35,7 @@
   transform: translateY(-50%);
   top: 50%;
   left: 10%;
+  z-index: 1;
 }
 
 .next_button {
@@ -35,4 +44,5 @@
   transform: translateY(-50%);
   top: 50%;
   right: 10%;
+  z-index: 1;
 }

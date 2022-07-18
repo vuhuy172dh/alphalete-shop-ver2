@@ -10,12 +10,10 @@ import {
 
 interface ContextValue {
   embla: EmblaCarouselType | undefined;
-  selectedIndex: number;
 }
 
 export const TrendingCarouselContext = React.createContext<ContextValue>({
-  embla: undefined,
-  selectedIndex: 0
+  embla: undefined
 });
 
 interface Props {
@@ -23,15 +21,31 @@ interface Props {
 }
 
 const TrendingCarousel = ({ children }: Props) => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [viewportRef, emblaApi] = useEmblaCarousel({ loop: false }, [
-    ClassNames()
-  ]);
+  const [viewportRef, emblaApi] = useEmblaCarousel(
+    { loop: false, align: 0.07 },
+    [ClassNames()]
+  );
+  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
+  const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) {
+      emblaApi.scrollPrev();
+    }
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) {
+      emblaApi.scrollNext();
+    }
+  }, [emblaApi]);
+
   const onSelect = useCallback(() => {
     if (emblaApi) {
-      setSelectedIndex(emblaApi.selectedScrollSnap());
+      setPrevBtnEnabled(emblaApi.canScrollPrev());
+      setNextBtnEnabled(emblaApi.canScrollNext());
     }
-  }, [emblaApi, setSelectedIndex]);
+  }, [emblaApi]);
 
   useEffect(() => {
     if (emblaApi) {
@@ -40,25 +54,25 @@ const TrendingCarousel = ({ children }: Props) => {
     }
   }, [emblaApi, onSelect]);
   return (
-    <TrendingCarouselContext.Provider
-      value={{ embla: emblaApi, selectedIndex }}
-    >
+    <TrendingCarouselContext.Provider value={{ embla: emblaApi }}>
       <div ref={viewportRef} className={styles.viewport}>
         <div className={styles.container}>{children}</div>
       </div>
-      <button className={styles.prev_button}>
+      <button className={styles.prev_button} onClick={scrollPrev}>
         <FontAwesomeIcon
           icon={faCircleArrowLeft}
           style={{
-            fontSize: '1.5rem'
+            fontSize: '1.5rem',
+            color: prevBtnEnabled ? 'inherit' : 'red'
           }}
         />
       </button>
-      <button className={styles.next_button}>
+      <button className={styles.next_button} onClick={scrollNext}>
         <FontAwesomeIcon
           icon={faCircleArrowRight}
           style={{
-            fontSize: '1.5rem'
+            fontSize: '1.5rem',
+            color: nextBtnEnabled ? 'inherit' : 'red'
           }}
         />
       </button>
