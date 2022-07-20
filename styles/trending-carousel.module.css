@@ -25,10 +25,6 @@
   margin: 0 1rem;
 }
 
-.slide:first-child {
-  margin-left: 6rem;
-}
-
 .prev_button {
   display: flex;
   position: absolute;

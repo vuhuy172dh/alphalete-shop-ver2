@@ -1,5 +1,7 @@
+import ThumbnailsCarousel from '../utils/thumbnails-carousel';
 import TrendingCarousel from '../utils/trending-carousel';
 import LinkBtn from './link-btn';
+import ThumbnailsItem from './thumbnails-item';
 import TrendingItem from './trending-item';
 
 const Trending = () => {
@@ -25,11 +27,17 @@ const Trending = () => {
       <div className="w-full h-full my-4 overflow-hidden  relative">
         <TrendingCarousel>
           <TrendingItem index={0}>
-            <img
-              src="https://cdn.shopify.com/s/files/1/0667/0133/products/AmplifyRestockMay310133_400x.jpg?v=1654661505"
-              alt="item"
+            <ThumbnailsCarousel
+              sources={[
+                '../assets/media-1.jpeg',
+                '../assets/media-2.jpeg',
+                '../assets/media-3.jpeg',
+                '../assets/media-4.jpeg'
+              ]}
+              names={['image', 'image', 'image', 'image']}
             />
           </TrendingItem>
+
           <TrendingItem index={1}>
             <img
               src="https://cdn.shopify.com/s/files/1/0667/0133/products/AmplifyRestockMay310133_400x.jpg?v=1654661505"

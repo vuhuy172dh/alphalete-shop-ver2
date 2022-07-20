@@ -22,7 +22,7 @@ interface Props {
 
 const TrendingCarousel = ({ children }: Props) => {
   const [viewportRef, emblaApi] = useEmblaCarousel(
-    { loop: false, align: 0.07 },
+    { loop: false, align: 0.07, draggable: false },
     [ClassNames()]
   );
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
