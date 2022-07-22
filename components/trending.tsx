@@ -1,18 +1,9 @@
-import { useCallback, useState } from 'react';
 import ThumbnailsCarousel from '../utils/thumbnails-carousel';
 import TrendingCarousel from '../utils/trending-carousel';
 import LinkBtn from './link-btn';
 import TrendingItem from './trending-item';
 
 const Trending = () => {
-  const [mouseEnter, setMouseEnter] = useState(false);
-  const handleMouseEnter = useCallback(() => {
-    setMouseEnter(true);
-  }, []);
-  const handleMouseLeave = useCallback(() => {
-    setMouseEnter(false);
-  }, []);
-
   return (
     <div className="w-full h-full flex flex-col">
       <div className="w-full h-full px-[7%] flex items-center">
