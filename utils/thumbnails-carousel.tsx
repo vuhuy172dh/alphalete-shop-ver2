@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import useEmblaCarousel, { EmblaCarouselType } from 'embla-carousel-react';
 import ClassNames from 'embla-carousel-class-names';
 import styles from '../styles/thumbnails-carousel.module.css';
@@ -17,9 +17,18 @@ export const ThumbnailsCarouselContext = React.createContext<ContextProps>({
 interface Props {
   sources: string[];
   names: string[];
+  product_name: string;
+  product_color: string;
+  product_price: string;
 }
 
-const ThumbnailsCarousel = ({ sources, names }: Props) => {
+const ThumbnailsCarousel = ({
+  sources,
+  names,
+  product_name,
+  product_color,
+  product_price
+}: Props) => {
   const [mainViewportRef, emblaMainApi] = useEmblaCarousel(
     {
       loop: false,
@@ -36,6 +45,14 @@ const ThumbnailsCarousel = ({ sources, names }: Props) => {
     [ClassNames()]
   );
 
+  const [mouseEnter, setMouseEnter] = useState(false);
+  const handleMouseEnter = useCallback(() => {
+    setMouseEnter(true);
+  }, []);
+  const handleMouseLeave = useCallback(() => {
+    setMouseEnter(false);
+  }, []);
+
   const onThumbClick = useCallback(
     (index: number) => {
       if (!emblaMainApi || !emblaThumbsApi) return;
@@ -46,26 +63,41 @@ const ThumbnailsCarousel = ({ sources, names }: Props) => {
 
   return (
     <ThumbnailsCarouselContext.Provider value={{ embla: emblaThumbsApi }}>
-      <div className={styles.embla}>
-        <div className={styles.viewport} ref={mainViewportRef}>
-          <div className={styles.container}>
-            {sources.map((src, index) => (
-              <ThumbnailsItem src={src} alt={names[index]} />
-            ))}
+      <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div className={styles.embla}>
+          <div className={styles.viewport} ref={mainViewportRef}>
+            <div className={styles.container}>
+              {sources.map((src, index) => (
+                <ThumbnailsItem src={src} alt={names[index]} />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className={styles.embla__thumb}>
-        <div className={styles.viewport} ref={thumbViewportRef}>
-          <div className={styles.container__thumb}>
-            {sources.map((src, index) => (
-              <ThumbnailsSubItem
-                src={src}
-                alt={names[index]}
-                onClick={() => onThumbClick(index)}
-              />
-            ))}
+        <div className={styles.bottom_container}>
+          <div
+            className={`${styles.embla__thumb} ${mouseEnter ? 'mouse_enter' : ''
+              }`}
+          >
+            <div className={styles.viewport__thumb} ref={thumbViewportRef}>
+              <div className={`${styles.container__thumb} `}>
+                {sources.map((src, index) => (
+                  <ThumbnailsSubItem
+                    src={src}
+                    alt={names[index]}
+                    onClick={() => onThumbClick(index)}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+          <div
+            className={`${styles.product_content} ${mouseEnter ? 'mouse_enter' : ''
+              }`}
+          >
+            <strong className={styles.product_name}>{product_name}</strong>
+            <p className={styles.product_color}>{product_color}</p>
+            <p className={styles.product_price}>{product_price}</p>
           </div>
         </div>
       </div>

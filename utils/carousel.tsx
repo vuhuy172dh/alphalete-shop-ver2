@@ -38,7 +38,7 @@ const Carousel = ({ children, className }: Props) => {
   }, [emblaApi, setSelectedIndex]);
 
   const onInit = useCallback(
-    (event: EmblaEventType) => {
+    (event?: EmblaEventType) => {
       if (!emblaApi) return;
       const isResizeEvent = event === 'resize';
       const toggleClass = isResizeEvent ? 'remove' : 'add';
@@ -60,6 +60,7 @@ const Carousel = ({ children, className }: Props) => {
 
   useEffect(() => {
     if (!emblaApi) return;
+    onInit();
     emblaApi.on('select', onSelect);
     emblaApi.on('init', onInit);
     emblaApi.on('init', onSelect);

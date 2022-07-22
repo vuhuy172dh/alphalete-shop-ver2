@@ -1,10 +1,18 @@
+import { useCallback, useState } from 'react';
 import ThumbnailsCarousel from '../utils/thumbnails-carousel';
 import TrendingCarousel from '../utils/trending-carousel';
 import LinkBtn from './link-btn';
-import ThumbnailsItem from './thumbnails-item';
 import TrendingItem from './trending-item';
 
 const Trending = () => {
+  const [mouseEnter, setMouseEnter] = useState(false);
+  const handleMouseEnter = useCallback(() => {
+    setMouseEnter(true);
+  }, []);
+  const handleMouseLeave = useCallback(() => {
+    setMouseEnter(false);
+  }, []);
+
   return (
     <div className="w-full h-full flex flex-col">
       <div className="w-full h-full px-[7%] flex items-center">
@@ -35,55 +43,144 @@ const Trending = () => {
                 '../assets/media-4.jpeg'
               ]}
               names={['image', 'image', 'image', 'image']}
+              product_name="Ozone Short"
+              product_color="Lavender"
+              product_price="$50.00"
             />
           </TrendingItem>
 
-          <TrendingItem index={1}>
-            <img
-              src="https://cdn.shopify.com/s/files/1/0667/0133/products/AmplifyRestockMay310133_400x.jpg?v=1654661505"
-              alt="item"
-            />
-          </TrendingItem>
-          <TrendingItem index={2}>
-            <img
-              src="https://cdn.shopify.com/s/files/1/0667/0133/products/AmplifyRestockMay310133_400x.jpg?v=1654661505"
-              alt="item"
-            />
-          </TrendingItem>
           <TrendingItem index={0}>
-            <img
-              src="https://cdn.shopify.com/s/files/1/0667/0133/products/AmplifyRestockMay310133_400x.jpg?v=1654661505"
-              alt="item"
+            <ThumbnailsCarousel
+              sources={[
+                '../assets/media-1.jpeg',
+                '../assets/media-2.jpeg',
+                '../assets/media-3.jpeg',
+                '../assets/media-4.jpeg'
+              ]}
+              names={['image', 'image', 'image', 'image']}
+              product_name="Ozone Short"
+              product_color="Lavender"
+              product_price="$50.00"
             />
           </TrendingItem>
-          <TrendingItem index={1}>
-            <img
-              src="https://cdn.shopify.com/s/files/1/0667/0133/products/AmplifyRestockMay310133_400x.jpg?v=1654661505"
-              alt="item"
-            />
-          </TrendingItem>
-          <TrendingItem index={2}>
-            <img
-              src="https://cdn.shopify.com/s/files/1/0667/0133/products/AmplifyRestockMay310133_400x.jpg?v=1654661505"
-              alt="item"
-            />
-          </TrendingItem>
+
           <TrendingItem index={0}>
-            <img
-              src="https://cdn.shopify.com/s/files/1/0667/0133/products/AmplifyRestockMay310133_400x.jpg?v=1654661505"
-              alt="item"
+            <ThumbnailsCarousel
+              sources={[
+                '../assets/media-1.jpeg',
+                '../assets/media-2.jpeg',
+                '../assets/media-3.jpeg',
+                '../assets/media-4.jpeg'
+              ]}
+              names={['image', 'image', 'image', 'image']}
+              product_name="Ozone Short"
+              product_color="Lavender"
+              product_price="$50.00"
             />
           </TrendingItem>
-          <TrendingItem index={1}>
-            <img
-              src="https://cdn.shopify.com/s/files/1/0667/0133/products/AmplifyRestockMay310133_400x.jpg?v=1654661505"
-              alt="item"
+
+          <TrendingItem index={0}>
+            <ThumbnailsCarousel
+              sources={[
+                '../assets/media-1.jpeg',
+                '../assets/media-2.jpeg',
+                '../assets/media-3.jpeg',
+                '../assets/media-4.jpeg'
+              ]}
+              names={['image', 'image', 'image', 'image']}
+              product_name="Ozone Short"
+              product_color="Lavender"
+              product_price="$50.00"
             />
           </TrendingItem>
-          <TrendingItem index={2}>
-            <img
-              src="https://cdn.shopify.com/s/files/1/0667/0133/products/AmplifyRestockMay310133_400x.jpg?v=1654661505"
-              alt="item"
+
+          <TrendingItem index={0}>
+            <ThumbnailsCarousel
+              sources={[
+                '../assets/media-1.jpeg',
+                '../assets/media-2.jpeg',
+                '../assets/media-3.jpeg',
+                '../assets/media-4.jpeg'
+              ]}
+              names={['image', 'image', 'image', 'image']}
+              product_name="Ozone Short"
+              product_color="Lavender"
+              product_price="$50.00"
+            />
+          </TrendingItem>
+
+          <TrendingItem index={0}>
+            <ThumbnailsCarousel
+              sources={[
+                '../assets/media-1.jpeg',
+                '../assets/media-2.jpeg',
+                '../assets/media-3.jpeg',
+                '../assets/media-4.jpeg'
+              ]}
+              names={['image', 'image', 'image', 'image']}
+              product_name="Ozone Short"
+              product_color="Lavender"
+              product_price="$50.00"
+            />
+          </TrendingItem>
+
+          <TrendingItem index={0}>
+            <ThumbnailsCarousel
+              sources={[
+                '../assets/media-1.jpeg',
+                '../assets/media-2.jpeg',
+                '../assets/media-3.jpeg',
+                '../assets/media-4.jpeg'
+              ]}
+              names={['image', 'image', 'image', 'image']}
+              product_name="Ozone Short"
+              product_color="Lavender"
+              product_price="$50.00"
+            />
+          </TrendingItem>
+
+          <TrendingItem index={0}>
+            <ThumbnailsCarousel
+              sources={[
+                '../assets/media-1.jpeg',
+                '../assets/media-2.jpeg',
+                '../assets/media-3.jpeg',
+                '../assets/media-4.jpeg'
+              ]}
+              names={['image', 'image', 'image', 'image']}
+              product_name="Ozone Short"
+              product_color="Lavender"
+              product_price="$50.00"
+            />
+          </TrendingItem>
+
+          <TrendingItem index={0}>
+            <ThumbnailsCarousel
+              sources={[
+                '../assets/media-1.jpeg',
+                '../assets/media-2.jpeg',
+                '../assets/media-3.jpeg',
+                '../assets/media-4.jpeg'
+              ]}
+              names={['image', 'image', 'image', 'image']}
+              product_name="Ozone Short"
+              product_color="Lavender"
+              product_price="$50.00"
+            />
+          </TrendingItem>
+
+          <TrendingItem index={0}>
+            <ThumbnailsCarousel
+              sources={[
+                '../assets/media-1.jpeg',
+                '../assets/media-2.jpeg',
+                '../assets/media-3.jpeg',
+                '../assets/media-4.jpeg'
+              ]}
+              names={['image', 'image', 'image', 'image']}
+              product_name="Ozone Short"
+              product_color="Lavender"
+              product_price="$50.00"
             />
           </TrendingItem>
         </TrendingCarousel>
