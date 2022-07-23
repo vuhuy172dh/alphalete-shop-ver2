@@ -30,8 +30,6 @@
   margin-top: 12px;
   padding-top: 3px;
   padding-bottom: 3px;
-  border: 1px solid hsla(var(--color-primary), 0.5);
-  border-radius: 0.5rem;
   transform: translateY(100%);
   opacity: 0.4;
   transition: all 0.3s ease;

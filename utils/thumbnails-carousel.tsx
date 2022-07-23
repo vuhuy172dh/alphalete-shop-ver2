@@ -76,8 +76,8 @@ const ThumbnailsCarousel = ({
 
         <div className={styles.bottom_container}>
           <div
-            className={`${styles.embla__thumb} ${mouseEnter ? 'mouse_enter' : ''
-              }`}
+            className={`border border-secondary_50 dark:border-primary_50 rounded-lg ${styles.embla__thumb
+              } ${mouseEnter ? 'mouse_enter' : ''}`}
           >
             <div className={styles.viewport__thumb} ref={thumbViewportRef}>
               <div className={`${styles.container__thumb} `}>

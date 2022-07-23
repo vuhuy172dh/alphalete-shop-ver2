@@ -27,18 +27,36 @@
 
 .prev_button {
   display: flex;
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   transform: translateY(-50%);
   top: 50%;
   left: 10%;
   z-index: 1;
+  backdrop-filter: blur(4px);
+  border-radius: 9999%;
+}
+
+.prev_button:global(.isNonActive) {
+  background-color: hsla(var(--color-secondary), 0.6);
 }
 
 .next_button {
   display: flex;
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   transform: translateY(-50%);
   top: 50%;
   right: 10%;
   z-index: 1;
+  backdrop-filter: blur(4px);
+  border-radius: 9999%;
 }

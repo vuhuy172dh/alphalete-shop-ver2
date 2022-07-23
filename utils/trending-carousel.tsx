@@ -3,10 +3,7 @@ import useEmblaCarousel, { EmblaCarouselType } from 'embla-carousel-react';
 import ClassNames from 'embla-carousel-class-names';
 import styles from '../styles/trending-carousel.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faCircleArrowLeft,
-  faCircleArrowRight
-} from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 interface ContextValue {
   embla: EmblaCarouselType | undefined;
@@ -58,22 +55,24 @@ const TrendingCarousel = ({ children }: Props) => {
       <div ref={viewportRef} className={styles.viewport}>
         <div className={styles.container}>{children}</div>
       </div>
-      <button className={styles.prev_button} onClick={scrollPrev}>
+      <button
+        className={`bg-secondary dark:bg-primary ${styles.prev_button} ${prevBtnEnabled === false ? 'bg-secondary_60 dark:bg-primary_60' : ''
+          }`}
+        onClick={scrollPrev}
+      >
         <FontAwesomeIcon
-          icon={faCircleArrowLeft}
-          style={{
-            fontSize: '1.5rem',
-            color: prevBtnEnabled ? 'inherit' : 'red'
-          }}
+          icon={faArrowLeft}
+          className="text-[1.5rem] text-primary dark:text-secondary"
         />
       </button>
-      <button className={styles.next_button} onClick={scrollNext}>
+      <button
+        className={`bg-secondary dark:bg-primary ${styles.next_button} ${nextBtnEnabled === false ? 'bg-secondary_60 dark:bg-primary_60' : ''
+          }`}
+        onClick={scrollNext}
+      >
         <FontAwesomeIcon
-          icon={faCircleArrowRight}
-          style={{
-            fontSize: '1.5rem',
-            color: nextBtnEnabled ? 'inherit' : 'red'
-          }}
+          icon={faArrowRight}
+          className="text-[1.5rem] text-primary dark:text-secondary"
         />
       </button>
     </TrendingCarouselContext.Provider>

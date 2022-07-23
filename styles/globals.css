@@ -10,8 +10,8 @@
 }
 
 body {
-  background-color: hsl(0deg, 0%, 96%);
-  color: hsl(0deg, 0%, 5%);
+  background-color: hsl(var(--color-primary));
+  color: hsl(var(--color-secondary));
   padding: 0;
   margin: 0;
   font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Arial, Helvetica,
@@ -20,8 +20,8 @@ body {
 }
 
 .body-dark {
-  background-color: hsl(0deg, 0%, 5%);
-  color: hsl(0deg, 0%, 96%);
+  background-color: hsl(var(--color-secondary));
+  color: hsl(var(--color-primary));
 }
 
 * {
