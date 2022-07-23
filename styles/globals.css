@@ -27,3 +27,19 @@ body {
 * {
   box-sizing: border-box;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: hsl(var(--color-primary));
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: hsla(var(--color-secondary), 0.3);
+}
+
+.dark ::-webkit-scrollbar {
+  background-color: hsl(var(--color-secondary));
+}
+.dark ::-webkit-scrollbar-thumb {
+  background-color: hsla(var(--color-primary), 0.3);
+}
