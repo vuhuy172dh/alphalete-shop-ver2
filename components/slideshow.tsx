@@ -4,8 +4,8 @@ import SlideshowContext from './slideshow-context';
 
 const SlideShow = () => {
   return (
-    <section className="px-20 md:px-4 py-14 md:py-10">
-      <div className="block max-w-[1234px] mx-auto relative w-full rounded-[3rem] md:rounded-[1.5rem] overflow-hidden shadow-lg shadow-secondary_30 dark:shadow-primary_30 transition-all duration-500 hover:scale-[1.01]">
+    <section className="px-20 sm:px-4 md:px-4 py-14 sm:py-10 md:py-10">
+      <div className="block max-w-[1234px] mx-auto relative w-full rounded-[3rem] sm:rounded-2xl md:rounded-[1.5rem] overflow-hidden shadow-lg shadow-secondary_30 dark:shadow-primary_30 transition-all duration-500 hover:scale-[1.01]">
         <Carousel>
           <CarouselItem index={0}>
             <SlideshowContext
