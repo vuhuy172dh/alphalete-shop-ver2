@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     screens: {
       sm: { max: '768px' },
-      md: { max: '1024px' },
+      md: { min: '768px', max: '1024px' },
       lg: { min: '1024px' }
     },
     letterSpacing: {
