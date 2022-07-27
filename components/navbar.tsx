@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useContext, useState } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import useClientRect from '../utils/clientRect-observer';
 import { ScrollContext } from '../utils/scroll-observer';
 import ButtonSlideEffect from './button-slide-effect';
@@ -12,16 +12,16 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NavbarMenu from './navbar-menu';
+import { NavbarContext } from '../utils/navbar-controller';
 
 const Navbar = () => {
   const [isMenHovered, setIsMenHovered] = useState<boolean>(false);
   const [isWomenHovered, setIsWomenHovered] = useState<boolean>(false);
   const { rect: rectMen, ref: refMen } = useClientRect([isMenHovered]);
   const { rect: rectWomen, ref: refWomen } = useClientRect([isWomenHovered]);
-
-  console.log(rectMen?.height);
   const { scrollY } = useContext(ScrollContext);
 
+  const { mode, handleMode } = useContext(NavbarContext);
   return (
     <section className="mb-[calc(5rem+0.5rem)] relative z-20">
       <div
@@ -186,7 +186,10 @@ const Navbar = () => {
                   className="text-inherit text-[1rem]"
                 />
               </button>
-              <button className="sm:block md:block hidden w-[40px] h-[40px] rounded-full hover:bg-secondary_30 dark:hover:bg-primary_30 transition-all">
+              <button
+                onClick={handleMode}
+                className="sm:block md:block hidden w-[40px] h-[40px] rounded-full hover:bg-secondary_30 dark:hover:bg-primary_30 transition-all"
+              >
                 <FontAwesomeIcon
                   icon={faBars}
                   className="text-inherit text-[1rem]"

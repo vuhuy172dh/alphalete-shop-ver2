@@ -1,11 +1,13 @@
 import type { NextPage } from 'next';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Footer from '../components/footer';
 import Header from '../components/header';
+import NavDrawer from '../components/nav-drawer';
 import Navbar from '../components/navbar';
 import SlideShow from '../components/slideshow';
 import Trending from '../components/trending';
 import DarkMode from '../utils/dark-mode';
+import NavMode from '../utils/navbar-controller';
 
 const Home: NextPage = () => {
   const [mounted, setMounted] = useState(false);
@@ -19,7 +21,10 @@ const Home: NextPage = () => {
       <DarkMode>
         <div>
           <Header title="Alphalete" />
-          <Navbar />
+          <NavMode>
+            <Navbar />
+            <NavDrawer />
+          </NavMode>
           <SlideShow />
           <Trending />
           <Footer />
