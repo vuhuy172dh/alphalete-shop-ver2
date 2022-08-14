@@ -60,7 +60,6 @@ const NavdrawerMenu = ({
           </div>
         ))}
       </div>
-      <div className="w-full h-24 bg-red-900"></div>
     </div>
   );
 };
