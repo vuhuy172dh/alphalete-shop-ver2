@@ -25,6 +25,13 @@
   margin: 0 1rem;
 }
 
+@media screen and (max-width: 800px) {
+  .slide {
+    flex: 0 0 50%;
+    margin: 0 0.5rem;
+  }
+}
+
 .prev_button {
   display: flex;
   height: 2.5rem;
