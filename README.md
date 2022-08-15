@@ -15,6 +15,9 @@ First, run the development server:
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 Preview: (this website is coded base on ["https://alphaleteathletics.com](Alphalete Website) to practice my skill)
+
+Note: All assets are taken from ["https://alphaleteathletics.com](Alphalete Website)
+
 - Resposive App
   ![image](https://user-images.githubusercontent.com/56556185/184675523-5f6252ad-ec90-4bde-9c90-754be56b01d8.png)
   
