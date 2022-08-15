@@ -68,7 +68,7 @@ const ThumbnailsCarousel = ({
           <div className={styles.viewport} ref={mainViewportRef}>
             <div className={styles.container}>
               {sources.map((src, index) => (
-                <ThumbnailsItem src={src} alt={names[index]} />
+                <ThumbnailsItem src={src} alt={names[index]} key={index} />
               ))}
             </div>
           </div>
@@ -76,8 +76,9 @@ const ThumbnailsCarousel = ({
 
         <div className={styles.bottom_container}>
           <div
-            className={`border border-secondary_50 dark:border-primary_50 rounded-lg ${styles.embla__thumb
-              } ${mouseEnter ? 'mouse_enter' : ''}`}
+            className={`border border-secondary_50 dark:border-primary_50 rounded-lg ${
+              styles.embla__thumb
+            } ${mouseEnter ? 'mouse_enter' : ''}`}
           >
             <div className={styles.viewport__thumb} ref={thumbViewportRef}>
               <div className={`${styles.container__thumb} `}>
@@ -86,14 +87,16 @@ const ThumbnailsCarousel = ({
                     src={src}
                     alt={names[index]}
                     onClick={() => onThumbClick(index)}
+                    key={index}
                   />
                 ))}
               </div>
             </div>
           </div>
           <div
-            className={`${styles.product_content} ${mouseEnter ? 'mouse_enter' : ''
-              }`}
+            className={`${styles.product_content} ${
+              mouseEnter ? 'mouse_enter' : ''
+            }`}
           >
             <strong className={styles.product_name}>{product_name}</strong>
             <p className={styles.product_color}>{product_color}</p>
