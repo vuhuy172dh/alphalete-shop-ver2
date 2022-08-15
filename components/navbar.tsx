@@ -25,16 +25,18 @@ const Navbar = () => {
   return (
     <section className="mb-[calc(5rem+0.5rem)] relative z-20">
       <div
-        className={`w-screen h-screen fixed top-0 z-1 backdrop-blur-sm transition-all duration-500 ${rectMen?.height === 0 && rectWomen?.height === 0
+        className={`w-screen h-screen fixed top-0 z-1 backdrop-blur-sm transition-all duration-500 ${
+          rectMen?.height === 0 && rectWomen?.height === 0
             ? 'invisible opacity-0'
             : 'visible opacity-100'
-          }`}
+        }`}
       ></div>
       <div
-        className={`block w-full sm:px-0 md:px-4 lg:px-12 fixed top-0 ${scrollY !== 0 ? 'top-[-2rem]' : 'top-0'
-          } z-2 transition-all`}
+        className={`block w-full sm:px-0 md:px-4 lg:px-12 fixed top-0 ${
+          scrollY !== 0 ? 'top-[-2rem]' : 'top-0'
+        } z-2 transition-all`}
       >
-        <div className="w-full max-w-[1234px] flex flex-col items-center mx-auto rounded-b-[1.5rem] sm:rounded-b-2xl border border-secondary_20 dark:border-primary_20 bg-primary_80 dark:bg-secondary_80">
+        <div className="w-full max-w-[1234px] flex flex-col items-center mx-auto rounded-b-[1.5rem] sm:rounded-b-2xl border border-secondary_20 dark:border-primary_20 bg-primary_80 dark:bg-secondary_80 backdrop-blur-lg">
           <div id="nav-top" className="h-8 w-full flex px-6">
             <div className="block w-full mr-auto">
               <InforCarousel
