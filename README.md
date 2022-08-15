@@ -13,3 +13,9 @@ First, run the development server:
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Preview: (this website is coded base on <a hrep="https://alphaleteathletics.com/">Alphalete Website/</a> to practice my skill)
+- Resposive App
+- Dark mode
+- Modern UI
+
+
