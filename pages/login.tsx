@@ -1,10 +1,12 @@
+import LinkBtn from '../components/link-btn';
+
 const LogIn = () => {
   return (
     <div className="w-full h-screen flex justify-center items-center">
       <form
         action="/send-data-here"
         method="post"
-        className="w-[80vw] max-w-[30rem] flex flex-col items-center gap-6 translate-y-[-50%]"
+        className="w-[80vw] max-w-[30rem] flex flex-col items-center gap-6 translate-y-[-20%]"
       >
         <h3 className="text-[1.3rem] font-bold w-fit leading-none">
           LOG INTO MY ACCOUNT
@@ -30,12 +32,27 @@ const LogIn = () => {
           />
         </div>
 
+        <LinkBtn href="/">
+          <p className="text-[0.7rem] font-bold">Forgot password?</p>
+        </LinkBtn>
+
         <button
           type="submit"
           className="w-full py-2 rounded-lg bg-secondary_60 dark:bg-primary_60 hover:bg-secondary dark:hover:bg-primary text-primary dark:text-secondary font-bold text-[1rem]"
         >
           LOG IN
         </button>
+
+        <div className="flex gap-1 items-center">
+          <p className="text-[0.6rem] leading-none text-secondary_60 dark:text-primary_60">
+            New to Alphalete?
+          </p>
+          <LinkBtn href="/">
+            <p className="text-[0.6rem] leading-none text-secondary dark:text-primary">
+              Create An Account
+            </p>
+          </LinkBtn>
+        </div>
       </form>
     </div>
   );
