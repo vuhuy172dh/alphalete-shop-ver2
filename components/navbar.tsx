@@ -55,7 +55,7 @@ const Navbar = () => {
                   Info
                 </p>
               </ButtonSlideEffect>
-              <LinkBtn href="/account/login">
+              <LinkBtn href="/login">
                 <p className="h-full flex items-center px-[0.5rem] font-bold text-[0.8rem] opacity-70 hover:opacity-100">
                   Login
                 </p>

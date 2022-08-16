@@ -18,23 +18,26 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext } from 'react';
 import { DarkModeContext } from '../utils/dark-mode';
+import Link from 'next/link';
 
 const NavdrawerFooter = () => {
-  const {mode, handleDarkMode} = useContext(DarkModeContext)
+  const { mode, handleDarkMode } = useContext(DarkModeContext);
 
   return (
     <div className="w-full flex-col">
       <div className="w-full flex columns-2 px-9 my-12">
         <div className="flex flex-col w-full items-start">
-          <div className="flex my-4 cursor-pointer justify-start items-center">
-            <FontAwesomeIcon
-              icon={faCircleUser}
-              className="text-[1.5rem] text-secondary_70 dark:text-primary_70"
-            />
-            <p className="text-[1.2rem] leading-none font-bold pl-2 text-secondary_70 dark:text-primary_70">
-              Sign In
-            </p>
-          </div>
+          <Link href="/login">
+            <div className="flex my-4 cursor-pointer items-center justify-start">
+              <FontAwesomeIcon
+                icon={faCircleUser}
+                className="text-[1.5rem] text-secondary_70 dark:text-primary_70"
+              />
+              <p className="text-[1.2rem] leading-none font-bold pl-2 text-secondary_70 dark:text-primary_70">
+                Sign In
+              </p>
+            </div>
+          </Link>
           <div className="flex my-4 cursor-pointer justify-start items-center">
             <FontAwesomeIcon
               icon={faTruckFast}
@@ -87,22 +90,40 @@ const NavdrawerFooter = () => {
       <hr className="w-[calc(100%-3rem)] my-2 mx-auto border-t border-t-secondary_40 dark:border-t-primary_40" />
       <div className="w-full flex my-6 px-6 justify-between items-center">
         <div className="cursor-pointer">
-          <FontAwesomeIcon icon={faInstagram} className="text-[1.5rem] leading-none" />
+          <FontAwesomeIcon
+            icon={faInstagram}
+            className="text-[1.5rem] leading-none"
+          />
         </div>
         <div className="cursor-pointer">
-          <FontAwesomeIcon icon={faTiktok} className="text-[1.5rem] leading-none" />
+          <FontAwesomeIcon
+            icon={faTiktok}
+            className="text-[1.5rem] leading-none"
+          />
         </div>
         <div className="cursor-pointer">
-          <FontAwesomeIcon icon={faTwitter} className="text-[1.5rem] leading-none" />
+          <FontAwesomeIcon
+            icon={faTwitter}
+            className="text-[1.5rem] leading-none"
+          />
         </div>
         <div className="cursor-pointer">
-          <FontAwesomeIcon icon={faFacebookF} className="text-[1.5rem] leading-none" />
+          <FontAwesomeIcon
+            icon={faFacebookF}
+            className="text-[1.5rem] leading-none"
+          />
         </div>
         <div className="cursor-pointer">
-          <FontAwesomeIcon icon={faYoutube} className="text-[1.5rem] leading-none" />
+          <FontAwesomeIcon
+            icon={faYoutube}
+            className="text-[1.5rem] leading-none"
+          />
         </div>
-          <button onClick={handleDarkMode}>
-          <FontAwesomeIcon icon={mode === 'dark' ? faToggleOn : faToggleOff} className='text-[2.5rem] leading-none'/>
+        <button onClick={handleDarkMode}>
+          <FontAwesomeIcon
+            icon={mode === 'dark' ? faToggleOn : faToggleOff}
+            className="text-[2.5rem] leading-none"
+          />
         </button>
       </div>
     </div>
