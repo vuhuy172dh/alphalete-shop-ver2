@@ -7,6 +7,7 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import NavDrawer from '../components/nav-drawer';
 import Navbar from '../components/navbar';
 import NavMode from '../utils/navbar-controller';
+import Footer from '../components/footer';
 import DarkMode from '../utils/dark-mode';
 config.autoAddCss = false;
 
@@ -26,6 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <NavDrawer />
           </NavMode>
           <Component {...pageProps} />
+          <Footer />
         </DarkMode>
       </ScrollObserver>
     );
