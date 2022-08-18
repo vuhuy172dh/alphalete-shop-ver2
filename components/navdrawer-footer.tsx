@@ -20,13 +20,17 @@ import { useContext } from 'react';
 import { DarkModeContext } from '../utils/dark-mode';
 import Link from 'next/link';
 
-const NavdrawerFooter = () => {
+interface Props {
+  handleNavMode : VoidFunction | undefined; 
+}
+
+const NavdrawerFooter = ({handleNavMode}: Props) => {
   const { mode, handleDarkMode } = useContext(DarkModeContext);
 
   return (
     <div className="w-full flex-col">
       <div className="w-full flex columns-2 px-9 my-12">
-        <div className="flex flex-col w-full items-start">
+        <div className="flex flex-col w-full items-start" onClick={handleNavMode}>
           <Link href="/login">
             <div className="flex my-4 cursor-pointer items-center justify-start">
               <FontAwesomeIcon

@@ -26,8 +26,10 @@ const NavDrawer = () => {
         onClick={handleMode}
       ></div>
       <div className="w-full max-w-[700px] h-[90vh] flex-col items-center bg-primary_80 dark:bg-secondary_80 relative z-30 border-t border-l border-r border-secondary_20 dark:border-primary_20 rounded-t-3xl backdrop-blur-lg">
-        <div className='w-full px-6 pt-2 sticky top-0 z-30'>
-          <div className={`w-full flex justify-center border-b border-b-secondary_40 dark:border-b-primary_40`}>
+        <div className="w-full px-6 pt-2 sticky top-0 z-30">
+          <div
+            className={`w-full flex justify-center border-b border-b-secondary_40 dark:border-b-primary_40`}
+          >
             <ButtonSlideEffect onClick={handleMenClick}>
               <p className="font-bold text-[1.5rem] leading-none px-1">MEN</p>
             </ButtonSlideEffect>
@@ -78,7 +80,7 @@ const NavDrawer = () => {
             />
           )}
           <hr className="w-[calc(100%-3rem)] my-2 mx-auto border-t border-t-secondary_40 dark:border-t-primary_40" />
-          <NavdrawerFooter />
+          <NavdrawerFooter handleNavMode={handleMode} />
         </div>
       </div>
     </div>

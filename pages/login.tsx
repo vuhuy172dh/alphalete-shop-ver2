@@ -43,7 +43,7 @@ const LogIn = () => {
           LOG IN
         </button>
 
-        <div className="flex gap-1 items-center">
+        <div className="flex h-3 gap-1 items-center">
           <p className="text-[0.6rem] leading-none text-secondary_60 dark:text-primary_60">
             New to Alphalete?
           </p>
