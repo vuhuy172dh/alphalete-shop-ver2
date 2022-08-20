@@ -25,16 +25,14 @@ const Navbar = () => {
   return (
     <section className="mb-[calc(5rem+0.5rem)] relative z-20">
       <div
-        className={`w-screen h-screen fixed top-0 z-1 backdrop-blur-sm transition-all duration-500 ${
-          rectMen?.height === 0 && rectWomen?.height === 0
+        className={`w-screen h-screen fixed top-0 z-1 backdrop-blur-sm transition-all duration-500 ${rectMen?.height === 0 && rectWomen?.height === 0
             ? 'invisible opacity-0'
             : 'visible opacity-100'
-        }`}
+          }`}
       ></div>
       <div
-        className={`block w-full sm:px-0 md:px-4 lg:px-12 fixed top-0 ${
-          scrollY !== 0 ? 'top-[-2rem]' : 'top-0'
-        } z-2 transition-all`}
+        className={`block w-full sm:px-0 md:px-4 lg:px-12 fixed top-0 ${scrollY !== 0 ? 'top-[-2rem]' : 'top-0'
+          } z-2 transition-all`}
       >
         <div className="w-full max-w-[1234px] flex flex-col items-center mx-auto rounded-b-[1.5rem] sm:rounded-b-2xl border border-secondary_20 dark:border-primary_20 bg-primary_80 dark:bg-secondary_80 backdrop-blur-lg">
           <div id="nav-top" className="h-8 w-full flex px-6">
@@ -50,10 +48,39 @@ const Navbar = () => {
               />
             </div>
             <div className="flex sm:hidden items-center">
-              <ButtonSlideEffect>
+              <ButtonSlideEffect styles="relative group">
                 <p className="h-full flex items-center text-[0.8rem] font-bold opacity-70 px-2 hover:opacity-100">
                   Info
                 </p>
+                <div className="hidden w-52 mt-[1px] p-6 flex-col items-start absolute top-8 right-0 bg-primary dark:bg-secondary rounded-lg border border-secondary_40 dark:border-primary_40 gap-2 z-10 group-hover:flex cursor-default">
+                  <div className="h-4">
+                    <LinkBtn href="/">
+                      <p className="text-[0.7rem] leading-none">Help Center</p>
+                    </LinkBtn>
+                  </div>
+                  <div className="h-4">
+                    <LinkBtn href="/">
+                      <p className="text-[0.7rem] leading-none">Returns</p>
+                    </LinkBtn>
+                  </div>
+                  <div className="h-4">
+                    <LinkBtn href="/">
+                      <p className="text-[0.7rem] leading-none">About Us</p>
+                    </LinkBtn>
+                  </div>
+                  <div className="h-4">
+                    <LinkBtn href="/">
+                      <p className="text-[0.7rem] leading-none">Carreers</p>
+                    </LinkBtn>
+                  </div>
+                  <div className="h-4">
+                    <LinkBtn href="/">
+                      <p className="text-[0.7rem] leading-none">
+                        Privacy Policy
+                      </p>
+                    </LinkBtn>
+                  </div>
+                </div>
               </ButtonSlideEffect>
               <LinkBtn href="/login">
                 <p className="h-full flex items-center px-[0.5rem] font-bold text-[0.8rem] opacity-70 hover:opacity-100">
