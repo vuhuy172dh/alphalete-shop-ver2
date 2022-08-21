@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useCallback, useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import useClientRect from '../utils/clientRect-observer';
 import { ScrollContext } from '../utils/scroll-observer';
 import ButtonSlideEffect from './button-slide-effect';
@@ -13,6 +13,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NavbarMenu from './navbar-menu';
 import { NavbarContext } from '../utils/navbar-controller';
+import { CartContext } from '../utils/cart-controller';
 
 const Navbar = () => {
   const [isMenHovered, setIsMenHovered] = useState<boolean>(false);
@@ -21,7 +22,8 @@ const Navbar = () => {
   const { rect: rectWomen, ref: refWomen } = useClientRect([isWomenHovered]);
   const { scrollY } = useContext(ScrollContext);
 
-  const { mode, handleMode } = useContext(NavbarContext);
+  const { handleMode } = useContext(NavbarContext);
+  const {handleMode: handleCartMode} = useContext(CartContext)
   return (
     <section className="mb-[calc(5rem+0.5rem)] relative z-20">
       <div
@@ -209,7 +211,10 @@ const Navbar = () => {
                   className="text-inherit text-[1rem]"
                 />
               </button>
-              <button className="w-[40px] h-[40px] rounded-full hover:bg-secondary_30 dark:hover:bg-primary_30 transition-all">
+              <button
+                className="w-[40px] h-[40px] rounded-full hover:bg-secondary_30 dark:hover:bg-primary_30 transition-all"
+                onClick={handleCartMode}
+              >
                 <FontAwesomeIcon
                   icon={faBriefcase}
                   className="text-inherit text-[1rem]"

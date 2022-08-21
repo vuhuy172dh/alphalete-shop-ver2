@@ -9,6 +9,8 @@ import Navbar from '../components/navbar';
 import NavMode from '../utils/navbar-controller';
 import Footer from '../components/footer';
 import DarkMode from '../utils/dark-mode';
+import ShoppingCart from '../components/shopping-cart';
+import CartController from '../utils/cart-controller';
 config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -23,8 +25,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ScrollObserver>
         <DarkMode>
           <NavMode>
-            <Navbar />
-            <NavDrawer />
+            <CartController>
+              <Navbar />
+              <NavDrawer />
+              <ShoppingCart />
+            </CartController>
           </NavMode>
           <Component {...pageProps} />
           <Footer />
