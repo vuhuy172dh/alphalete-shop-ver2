@@ -12,10 +12,11 @@ const Search = () => {
   else {
     return (
       <div
-        className={`${searchMode === 'open'
+        className={`${
+          searchMode === 'open'
             ? 'visible z-50 opacity-100'
             : 'invisible z-[-1] opacity-0'
-          } w-full h-screen fixed top-0 cursor-pointer bg-primary_60 dark:bg-secondary_60 flex justify-center items-end`}
+        } w-full h-screen fixed top-0 cursor-pointer bg-primary_60 dark:bg-secondary_60 flex justify-center items-end`}
       >
         <div
           className="w-full h-full fixed top-0 backdrop-blur-md z-10"
