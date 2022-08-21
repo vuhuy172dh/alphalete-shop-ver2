@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NavbarMenu from './navbar-menu';
 import { NavbarContext } from '../utils/navbar-controller';
 import { CartContext } from '../utils/cart-controller';
+import { SearchContext } from '../utils/search-controller';
 
 const Navbar = () => {
   const [isMenHovered, setIsMenHovered] = useState<boolean>(false);
@@ -24,6 +25,7 @@ const Navbar = () => {
 
   const { handleMode } = useContext(NavbarContext);
   const {handleMode: handleCartMode} = useContext(CartContext)
+  const {handleSearchMode} = useContext(SearchContext)
   return (
     <section className="mb-[calc(5rem+0.5rem)] relative z-20">
       <div
@@ -205,11 +207,11 @@ const Navbar = () => {
               </div>
             </div>
             <div className="flex gap-1">
-              <button className="w-[40px] h-[40px] rounded-full hover:bg-secondary_30 dark:hover:bg-primary_30 transition-all">
+              <button className="w-[40px] h-[40px] rounded-full hover:bg-secondary_30 dark:hover:bg-primary_30 transition-all" onClick={handleSearchMode}>
                 <FontAwesomeIcon
                   icon={faSearch}
                   className="text-inherit text-[1rem]"
-                />
+               />
               </button>
               <button
                 className="w-[40px] h-[40px] rounded-full hover:bg-secondary_30 dark:hover:bg-primary_30 transition-all"

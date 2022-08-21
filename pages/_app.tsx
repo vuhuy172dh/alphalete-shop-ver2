@@ -11,6 +11,8 @@ import Footer from '../components/footer';
 import DarkMode from '../utils/dark-mode';
 import ShoppingCart from '../components/shopping-cart';
 import CartController from '../utils/cart-controller';
+import SearchController from '../utils/search-controller';
+import Search from '../components/search';
 config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -26,9 +28,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         <DarkMode>
           <NavMode>
             <CartController>
-              <Navbar />
-              <NavDrawer />
-              <ShoppingCart />
+              <SearchController>
+                <Navbar />
+                <NavDrawer />
+                <ShoppingCart />
+                <Search />
+              </SearchController>
             </CartController>
           </NavMode>
           <Component {...pageProps} />
