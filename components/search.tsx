@@ -15,16 +15,21 @@ const Search = () => {
     return (
       <div
         className={`${searchMode === 'open'
-          ? 'visible z-50 opacity-100'
-          : 'invisible z-[-1] opacity-0'
-          } w-full h-screen fixed top-0 cursor-pointer bg-primary_60 dark:bg-secondary_60 flex justify-center items-end`}
+            ? 'visible z-50 opacity-100'
+            : 'invisible z-[-1] opacity-0'
+          } w-full h-screen fixed top-0 cursor-pointer bg-primary_60 dark:bg-secondary_60 flex justify-center items-end transition-all duration-400`}
       >
         <div
           className="w-full h-full fixed top-0 backdrop-blur-md z-10"
           onClick={handleSearchMode}
         ></div>
 
-        <div className="w-[90vw] h-[85vh] pt-8 relative bg-primary dark:bg-secondary z-20 border border-secondary_20 dark:border-primary_20 rounded-t-2xl flex flex-col items-center">
+        <div
+          className={`w-[90vw] h-[85vh] pt-8 relative bg-primary dark:bg-secondary z-20 border border-secondary_20 dark:border-primary_20 rounded-t-2xl flex flex-col items-center ${searchMode === 'close'
+              ? 'translate-y-full opacity-0'
+              : 'translate-x-0 opacity-100'
+            } transition-all duration-400`}
+        >
           <div className="w-full px-6">
             <input
               type="text"
