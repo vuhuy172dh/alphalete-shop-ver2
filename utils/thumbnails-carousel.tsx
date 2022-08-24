@@ -69,7 +69,7 @@ const ThumbnailsCarousel = ({
           <div className={styles.viewport} ref={mainViewportRef}>
             <div className={`${styles.container}`}>
               {sources.map((src, index) => (
-                <ThumbnailsItem src={src} alt={names[index]} key={index} />
+                <ThumbnailsItem src={src} alt={names[index]} key={index} productSlug={names[index]}/>
               ))}
             </div>
             <QuickAdd sizes={['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL']} mouseEnter={mouseEnter}/>
