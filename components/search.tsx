@@ -14,10 +14,11 @@ const Search = () => {
   else {
     return (
       <div
-        className={`${searchMode === 'open'
+        className={`${
+          searchMode === 'open'
             ? 'visible z-50 opacity-100'
             : 'invisible z-[-1] opacity-0'
-          } w-full h-screen fixed top-0 cursor-pointer bg-primary_60 dark:bg-secondary_60 flex justify-center items-end transition-all duration-400`}
+        } w-full h-screen fixed top-0 cursor-pointer bg-primary_60 dark:bg-secondary_60 flex justify-center items-end transition-all duration-400`}
       >
         <div
           className="w-full h-full fixed top-0 backdrop-blur-md z-10"
@@ -25,10 +26,11 @@ const Search = () => {
         ></div>
 
         <div
-          className={`w-[90vw] h-[85vh] pt-8 relative bg-primary dark:bg-secondary z-20 border border-secondary_20 dark:border-primary_20 rounded-t-2xl flex flex-col items-center ${searchMode === 'close'
+          className={`w-[90vw] h-[85vh] pt-8 relative bg-primary dark:bg-secondary z-20 border border-secondary_20 dark:border-primary_20 rounded-t-2xl flex flex-col items-center ${
+            searchMode === 'close'
               ? 'translate-y-full opacity-0'
               : 'translate-x-0 opacity-100'
-            } transition-all duration-400`}
+          } transition-all duration-400`}
         >
           <div className="w-full px-6">
             <input
@@ -70,7 +72,8 @@ const Search = () => {
                 </LinkBtn>
               </div>
             </div>
-            <hr className="w-full border-t border-t-secondary_30 dark:border-t-primary_30" />
+            <hr className="w-full border-t border-t-secondary_30 dark:border-t-primary_30 mb-4" />
+            <p className="leading-none text-[1.5rem] font-bold">TRENDING NOW</p>
             <div className="w-full py-8 flex flex-wrap ">
               <div className="grow shrink-0 basis-1/5 m-2">
                 <ThumbnailsCarousel
