@@ -41,12 +41,13 @@ const Product = () => {
       </div>
 
       <div
-        className={`min-w-[40rem] fixed bottom-0 left-1/2 translate-x-[-50%] z-10 backdrop-blur-lg bg-secondary_70 border border-secondary_20 dark:border-primary_20 rounded-t-3xl ${rectF?.height
+        className={`min-w-[40rem] fixed bottom-0 left-1/2 translate-x-[-50%] z-10 backdrop-blur-lg bg-primary_70 dark:bg-secondary_70 border border-secondary_20 dark:border-primary_20 rounded-t-3xl ${
+          rectF?.height
             ? scrollY > 110 + (rectF.height * (imgs.length - 1)) / imgs.length
               ? 'translate-y-full'
               : 'translate-y-0'
             : ''
-          }`}
+        }`}
       >
         <ProductDescription />
       </div>
