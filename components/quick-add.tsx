@@ -13,16 +13,15 @@ const QuickAdd = ({ sizes, mouseEnter }: Props) => {
   const handleLeave = () => {
     setEnter(false);
   };
-
-  console.log(enter);
   return (
     <div
-      className={`w-[calc(100%-2rem)] absolute bottom-1 left-4 z-10 cursor-default bg-secondary flex flex-col items-center px-4 rounded-2xl translate-y-[calc(100%+0.25rem)] transition-all duration-500 ${mouseEnter
+      className={`w-[calc(100%-2rem)] absolute bottom-1 left-4 z-10 cursor-default bg-secondary flex flex-col items-center px-4 rounded-2xl translate-y-[calc(100%+0.25rem)] transition-all duration-500 ${
+        mouseEnter
           ? enter
             ? 'translate-y-[0.1rem]'
             : 'translate-y-[6rem]'
           : ''
-        }`}
+      }`}
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
     >
