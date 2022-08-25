@@ -1,6 +1,9 @@
 import { useRouter } from 'next/router';
 import ProductDetails from '../../components/product-details';
+import ProductDescription from '../../components/product-description';
 import ProductImages from '../../components/product-images';
+import useClientRect from '../../utils/clientRect-observer';
+import { useState } from 'react';
 
 const Product = () => {
   const router = useRouter();
@@ -33,32 +36,8 @@ const Product = () => {
         <p className="w-full">This is color list</p>
       </div>
 
-      <div className="min-w-[50rem] fixed bottom-0 left-1/2 translate-x-[-50%] z-10 backdrop-blur-lg bg-secondary_70 border border-secondary_20 dark:border-primary_20 rounded-t-3xl">
-        <div className="h-12 flex">
-          <div className="flex-1 pl-8">
-            <div className="relative flex h-full min-w-[8rem] cursor-pointer items-center justify-center whitespace-nowrap text-center font-[500]">
-              <span>DESCRIPTION</span>
-            </div>
-          </div>
-
-          <div className="flex-1 pl-8">
-            <div className="relative flex h-full min-w-[8rem] cursor-pointer items-center justify-center whitespace-nowrap text-center font-[500]">
-              <span>DESCRIPTION</span>
-            </div>
-          </div>
-
-          <div className="flex-1 pl-8">
-            <div className="relative flex h-full min-w-[8rem] cursor-pointer items-center justify-center whitespace-nowrap text-center font-[500]">
-              <span>DESCRIPTION</span>
-            </div>
-          </div>
-
-          <div className="flex-1 pl-8">
-            <div className="relative flex h-full min-w-[8rem] cursor-pointer items-center justify-center whitespace-nowrap text-center font-[500]">
-              <span>DESCRIPTION</span>
-            </div>
-          </div>
-        </div>
+      <div className="min-w-[40rem] fixed bottom-0 left-1/2 translate-x-[-50%] z-10 backdrop-blur-lg bg-secondary_70 border border-secondary_20 dark:border-primary_20 rounded-t-3xl">
+        <ProductDescription />
       </div>
     </div>
   );
