@@ -9,8 +9,20 @@
   }
 }
 
+@layer utilities {
+  /*Chrome, Safari and Opera*/
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
 body {
-  background-color: hsl(var(--color-primary));
+  background-color: hsla(var(--color-primary),0.95);
   color: hsl(var(--color-secondary));
   padding: 0;
   margin: 0;
@@ -20,7 +32,7 @@ body {
 }
 
 .body-dark {
-  background-color: hsl(var(--color-secondary));
+  background-color: hsla(var(--color-secondary),0.95);
   color: hsl(var(--color-primary));
 }
 
