@@ -74,7 +74,7 @@ const Search = () => {
             </div>
             <hr className="w-full border-t border-t-secondary_30 dark:border-t-primary_30 mb-4" />
             <p className="leading-none text-[1.5rem] font-bold">TRENDING NOW</p>
-            <div className="w-full py-8 flex flex-wrap ">
+            <div className="w-full py-8 grid grid-cols-[repeat(auto-fill,minmax(18rem,1fr))]">
               <div className="grow shrink-0 basis-1/5 m-2">
                 <ThumbnailsCarousel
                   sources={[
