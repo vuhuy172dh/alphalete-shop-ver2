@@ -17,14 +17,14 @@ const CartMenu = ({ cartItems }: Props) => {
           <Link href="/">
             <a className="p-3 border-[2px] border-secondary_30 dark:border-primary_30 rounded-lg hover:border-secondary_50 dark:hover:border-primary_50 hover:bg-secondary_30 dark:hover:bg-primary_30">
               <p className="leading-none text-[0.9rem] font-bold">
-                WOMEN'S BEST SELLERS
+                WOMEN&apos;S BEST SELLERS
               </p>
             </a>
           </Link>
           <Link href="/">
             <a className="p-3 border-[2px] border-secondary_30 dark:border-primary_30 rounded-lg hover:border-secondary_50 dark:hover:border-primary_50 hover:bg-secondary_30 dark:hover:bg-primary_30">
               <p className="leading-none text-[0.9rem] font-bold">
-                MEN'S BEST SELLERS
+                MEN&apos;S BEST SELLERS
               </p>
             </a>
           </Link>
